@@ -1,0 +1,69 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: black;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+}
+
+.intro {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 🔥 Responsive logo */
+.logo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-weight: 700;
+    color: #e50914;
+    z-index: 2;
+
+    /* Responsive sizing */
+    font-size: clamp(2rem, 8vw, 5rem);
+    letter-spacing: clamp(4px, 2vw, 14px);
+    text-align: center;
+}
+
+/* Individual letters */
+.logo span {
+    opacity: 0;
+    transform: translateY(120%);
+    display: inline-block;
+}
+
+/* Cinematic overlay */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at center,
+        rgba(255, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.95) 70%
+    );
+    z-index: 1;
+}
+
+/* 📱 Small phones */
+@media (max-width: 480px) {
+    .logo {
+        letter-spacing: 4px;
+    }
+}
+
+/* 📱 Tablets */
+@media (max-width: 768px) {
+    .logo {
+        letter-spacing: 6px;
+    }
+}
+
